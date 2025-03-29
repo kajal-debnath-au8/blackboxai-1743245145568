@@ -1,0 +1,20 @@
+[
+  {
+    "khatianNo": "12345",
+    "plotNo": "456",
+    "mouza": "Kolkata",
+    "district": "Kolkata",
+    "owner": "John Doe",
+    "area": "0.5 acre",
+    "type": "Residential"
+  },
+  {
+    "khatianNo": "67890",
+    "plotNo": "789",
+    "mouza": "Howrah",
+    "district": "Howrah",
+    "owner": "Jane Smith",
+    "area": "1 acre",
+    "type": "Agricultural"
+  }
+]
