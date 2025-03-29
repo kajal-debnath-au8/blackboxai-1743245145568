@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Land Record Search | Banglarbhumi</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header class="bg-primary text-white py-3">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <h1>Banglarbhumi</h1>
+                <nav>
+                    <ul class="nav">
+                        <li class="nav-item"><a href="/" class="nav-link text-white">Home</a></li>
+                        <li class="nav-item"><a href="/search.html" class="nav-link text-white active">Land Records</a></li>
+                        <li class="nav-item"><a href="/mutation.html" class="nav-link text-white">Mutation</a></li>
+                        <li class="nav-item"><a href="/payment.html" class="nav-link text-white">Tax Payment</a></li>
+                        <li class="nav-item"><a href="/login.html" class="nav-link text-white">Login</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="container my-5">
+        <div class="form-container">
+            <h2 class="mb-4">Land Record Search</h2>
+            
+            <form id="searchForm">
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <label for="khatianNo" class="form-label">Khatian Number</label>
+                        <input type="text" class="form-control" id="khatianNo" placeholder="Enter Khatian No">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="plotNo" class="form-label">Plot Number</label>
+                        <input type="text" class="form-control" id="plotNo" placeholder="Enter Plot No">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="owner" class="form-label">Owner Name</label>
+                        <input type="text" class="form-control" id="owner" placeholder="Enter Owner Name">
+                    </div>
+                </div>
+                
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="mouza" class="form-label">Mouza</label>
+                        <select class="form-select" id="mouza">
+                            <option value="">Select Mouza</option>
+                            <option value="Kolkata">Kolkata</option>
+                            <option value="Howrah">Howrah</option>
+                            <option value="Hooghly">Hooghly</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="district" class="form-label">District</label>
+                        <select class="form-select" id="district">
+                            <option value="">Select District</option>
+                            <option value="Kolkata">Kolkata</option>
+                            <option value="Howrah">Howrah</option>
+                            <option value="North 24 Parganas">North 24 Parganas</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary px-4">Search</button>
+                    <button type="reset" class="btn btn-outline-secondary ms-2">Reset</button>
+                </div>
+            </form>
+            
+            <div id="searchResults" class="mt-5 d-none">
+                <h3 class="mb-3">Search Results</h3>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Khatian No</th>
+                                <th>Plot No</th>
+                                <th>Mouza</th>
+                                <th>District</th>
+                                <th>Owner</th>
+                                <th>Area</th>
+                                <th>Type</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="resultsTable">
+                            <!-- Results will be populated here -->
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div id="mapContainer" class="map-container mt-4">
+                    <!-- Map will be rendered here -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p>&copy; <span class="current-year"></span> Banglarbhumi - Government of West Bengal</p>
+        </div>
+    </footer>
+
+    <div id="toast-container" class="position-fixed bottom-0 end-0 p-3" style="z-index: 11"></div>
+    <div id="loading-spinner" class="d-none position-fixed top-0 start-0 w-100 h-100 bg-dark bg-opacity-50" style="z-index: 10">
+        <div class="d-flex justify-content-center align-items-center h-100">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/app.js"></script>
+    <script src="/js/search.js"></script>
+</body>
+</html>
